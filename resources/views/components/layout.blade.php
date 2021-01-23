@@ -1,3 +1,4 @@
+@props(['scripts',])
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -11,6 +12,13 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
+    @foreach ($scripts ?? [] as $script)
+    
+    <script src="{{ asset($script) }}" defer></script>
+
+    
+    @endforeach
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,13 +28,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- fontawesome --}}
     <script src="https://kit.fontawesome.com/b758555ce5.js" crossorigin="anonymous"></script>
+    {{-- favicon --}}
+    <link rel='shortcut icon' type='image/x-icon' href='/img/logo.ico' />
 </head>
 <body>
     <div id="app">
        <x-navbar/>
-        <main class="py-4">
+       <main>
            {{$slot}}
         </main>
+        <x-footer/>
     </div>
 </body>
 </html>

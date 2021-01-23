@@ -1,0 +1,36 @@
+nav{
+    transition: all 0.4s;
+}
+.bg-nav{
+    background-color: rgba(255, 255, 255, 0.199);
+}
+.bg-nav2{
+    background-color: rgb(187, 134, 20);
+}
+.bg-text{
+    background-color: rgba(255, 255, 255, 0.637);
+}
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('/img/masthead-birra.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.nav-item{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+body{
+    margin-top: 76px;
+}
+.bg-article{
+    background-image: url('/img/sfondo-article.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#sticky-footer {
+    flex-shrink: none;
+}

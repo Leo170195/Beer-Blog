@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -18,4 +19,6 @@ use App\Http\Controllers\HomeController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('homepage');
-Route::get('/article', [HomeController::class, 'article'])->name('article');
+Route::get('/article', [ArticleController::class, 'article'])->name('article');
+Route::post('/article/submit', [ArticleController::class, 'submit'])->name('article.submit');
+

@@ -10048,3 +10048,21 @@ body {
 #sticky-footer {
   flex-shrink: none;
 }
+
+.img-beer {
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+          clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 300px;
+  border: solid 3px #f8960b;
+}
+
+.bg-italy {
+  fill: #bb8614;
+}
+
+.bg-italy:hover {
+  fill: red;
+}

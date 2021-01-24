@@ -25,4 +25,9 @@ class ArticleController extends Controller
            
         return redirect()->back()->with('status', 'La tua Birra è stata aggiunta al catalogo Grazie!');
     }
+    public function detail (Beer $article) {
+        
+
+        return view('detail',compact('article'));
+    }
 }

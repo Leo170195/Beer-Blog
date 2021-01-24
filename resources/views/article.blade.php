@@ -30,8 +30,9 @@
                     </div>
                     <div class="row py-4">
                         <div class="col-12 col-md-6 offset-md-3">
-                            <label for="formGroupExampleInput" class="bg-text">Descrizione Birra</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="description beer" value="{{old('description')}}" name="description">
+                            {{-- <label for="formGroupExampleInput" class="bg-text">Descrizione Birra</label> --}}
+                            {{-- <textarea type="text" class="form-control" id=""  value="" name=""> --}}
+                            <textarea name="description" id="formGroupExampleInput" placeholder="description beer" cols="50" rows="10">{{old('description')}}</textarea>
                         </div>
                     </div>
                     <div class="row py-4">

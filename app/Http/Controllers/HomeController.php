@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Beer;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,7 +22,16 @@ class HomeController extends Controller
     public function index()
     {
         $scripts = ["js/navbarScript.js"];
-        return view('homepage', compact('scripts'));
+        $articles = Beer::all();
+        // dd($articles);
+        return view('homepage', compact('articles', 'scripts'));
     }
- 
+    public function cartina()
+    {
+        return view('cartina');
+    }
+    public function show($region){
+        $beer = Beer::where('regions', $region)->get();
+        return view('show', compact('beer'));
+    }
 }

@@ -1,4 +1,5 @@
 <x-layout>
+  <x-head title="Beer for region" />
   @foreach ($beer as $article)
   <div class="row">
     <div class="col-12 text-center my-5">
@@ -20,7 +21,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-          <div class="col-12 bg-nav2 text-center fixed-bottom"> 
+          <div class="col-12 bg-nav2 text-center py-3"> 
             <a class=" text-light font-weight-bold lead" href="{{route('cartina')}}">Torna alla cartina interattiva dell'Italia! <i class="fas fa-map-marked-alt fa-2x"></i></a>
           </div>
         </div>

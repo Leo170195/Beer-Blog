@@ -5,7 +5,7 @@
           <small>Copyright &copy; Leonardo De Candia</small>
         </div>
       </div>
-      <div class="row justify-content-center mt-4">
+      <div class="row justify-content-center mt-4 mb-2">
         <div class="col-2 d-flex justify-content-center">
           <i class="fab fa-twitter-square fa-2x"></i> 
         </div>

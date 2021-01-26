@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Beer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -16,7 +17,8 @@ class ArticleController extends Controller
         return view('article');
     }
     public function submit (Request $request){
-        $article = Beer::create([
+        $user = Auth::user();
+        $user->beers()->create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'regions' => $request->input('regions'),

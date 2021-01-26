@@ -1,4 +1,5 @@
 <x-layout>
+    <x-head title="Beer detail" />
     <div class="container mb-4">
         <div class="row justify-content-center">
             <div class="col-12 mt-5 d-flex justify-content-center">
@@ -12,6 +13,7 @@
               <h2>{{$article->title}}</h2>
               <p class="lead">{{$article->description}}</p>
               <h6>{{$article->created_at->format('d-m-Y')}}</h6>
+              <h6>Articolo creato da {{$article->user->name}}</h6>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 <x-layout>
+    <x-head title="Insert Beer" />
     <div class="container pt-5 bg-article">
         <div class="row">
             <div class="col-12">

@@ -22,7 +22,7 @@ class HomeController extends Controller
     public function index()
     {
         $scripts = ["js/navbarScript.js"];
-        $articles = Beer::all();
+        $articles = Beer::orderByDesc('created_at')->get();
         // dd($articles);
         return view('homepage', compact('articles', 'scripts'));
     }

@@ -39,5 +39,4 @@
             
         @endforeach
       </div>
-      <div style="height: 800px"></div>
 </x-layout>

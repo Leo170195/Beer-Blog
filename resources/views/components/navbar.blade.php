@@ -52,6 +52,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('article') }}"><i class="fas fa-beer"></i> Inserisci articolo</a>
                             </li>
+                           
+                            @if ( Auth::user()->is_admin)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.index') }}"> Pannello Admin</a>
+                            </li>
+                            @endif
                         </div>
                     </li>
                 @endguest

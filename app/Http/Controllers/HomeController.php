@@ -32,6 +32,6 @@ class HomeController extends Controller
     }
     public function show($region){
         $beer = Beer::where('regions', $region)->get();
-        return view('show', compact('beer'));
+        return view('show', compact('beer', 'region'));
     }
 }

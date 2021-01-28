@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Beer;
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
     public function __construct()
     {
@@ -20,8 +18,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $articles = Beer::orderByDesc('created_at')->get();
-        return view('admin.index', compact('articles'));
+        $users = User::all();
+        return view('user.index', compact('users'));
     }
 
     /**
@@ -48,10 +46,10 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Admin  $admin
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Beer $article)
+    public function show($id)
     {
         //
     }
@@ -59,47 +57,47 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Admin  $admin
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Beer $article)
+    public function edit($id)
     {
-        return view('admin.edit', compact('article'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Admin  $admin
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Beer $article)
+    public function update(Request $request, $id)
     {
-     
-            $article->title = $request->title;
-            $article->description = $request->description;
-            $article->regions = $request->regions;
-            if ($request->img) {
-                $article->img = $request->file('img')->store('public/img');
-            }
-        //    dd($article);
-            $article->save();
-       
-           
-        return redirect(route('admin.index', compact('article')));
+        //
     }
-
 
     /**
      * Remove the specified resource from storage.
-     * ->with('status', 'Hai apportato le modifiche correttamente')
-     * @param  \App\Models\Admin  $admin
+     *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Beer $article)
+    public function destroy(User $user)
     {
-        $article->delete();
+        $user->delete();
+        return redirect()->back();
+    }
+    public function add(User $user)
+    {
+        $user->is_admin = 1;
+        $user->save();
+        return redirect()->back();
+    }
+    public function remove(User $user)
+    {
+        $user->is_admin = 0;
+        $user->save();
         return redirect()->back();
     }
 }

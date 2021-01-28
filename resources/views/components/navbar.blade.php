@@ -53,9 +53,12 @@
                                 <a class="nav-link" href="{{ route('article') }}"><i class="fas fa-beer"></i> Inserisci articolo</a>
                             </li>
                            
-                            @if ( Auth::user()->is_admin)
+                            @if (Auth::user()->is_admin)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.index') }}"> Pannello Admin</a>
+                                <a class="nav-link" href="{{ route('admin.index') }}"> Modifica Articoli</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.index') }}"> Pannello Admin User</a>
                             </li>
                             @endif
                         </div>

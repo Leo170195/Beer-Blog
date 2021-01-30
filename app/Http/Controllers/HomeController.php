@@ -12,7 +12,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-   
+    public function detail (Beer $article) {
+              
+
+        return view('detail',compact('article'));
+    }
     
     /**
      * Show the application dashboard.
